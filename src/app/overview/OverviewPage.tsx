@@ -23,14 +23,13 @@ export default async function OverviewPage({ id }: { id?: string }) {
       }
     });
   }
-  const overview_md = selected_overview.block_contents;
   return (
     <div className="app-details app-scroll app-pad">
       <div className="app-frame app-pad">
         <div className="panel panel-default">
           <div className="panel-body">
             <p>
-              <MarkdownBlock markdown={overview_md} />
+              {selected_overview && <MarkdownBlock markdown={selected_overview.block_contents} />}
             </p>
           </div>
         </div>
